@@ -9,8 +9,7 @@ const forecash = (lat,lon,callback) => {
         }else if(body.error){
           callback('Unable to get the location',undefined)
         }else{
-        callback(undefined, "It's currently "+body.current.temperature+" C out there!"+"Temperature files like "+body.current.feelslike+" C"+
-        " And Sky like "+body.current.weather_descriptions)
+        callback(undefined,body.current.weather_descriptions[0] + "It's currently "+body.current.temperature+" C out there!"+"Temperature files like "+body.current.feelslike+" C degress. The humidity is: "+body.current.humidity+"%.")
         } 
   })
 }
